@@ -36,7 +36,7 @@
       display: block;
     }
     img {
-      display: block;
+      display: block; // img 자체는 inline인데 하는 짓은 inline-block 안전빵으로 block처리
       width: auto;
       height: 20px;
     }
