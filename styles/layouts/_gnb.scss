@@ -36,9 +36,55 @@
       display: block;
     }
     img {
-      display: block;
+      display: block; // img 자체는 inline인데 하는 짓은 inline-block 안전빵으로 block처리
       width: auto;
       height: 20px;
+    }
+  }
+
+  @include responsive(T) {
+    &-left {
+      @include flexbox(start);
+    }
+
+    &-right {
+      @include flexbox(end);
+
+      .button-group {
+        margin-right: 24px;
+        .gnb-icon-button {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    &-wrapper {
+      height: 80px;
+    }
+
+    .logo {
+      position: static;
+      transform: none;
+      margin-right: 32px;
+      img {
+        height: 24px;
+      }
+    }
+
+    .btn-primary {
+      width: 88px;
+      i {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  @include responsive(D) {
+    &-right {
+      .input-group {
+        width: 264px;
+        margin-right: 24px;
+      }
     }
   }
 }
